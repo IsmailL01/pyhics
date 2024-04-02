@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <div class="mainText-contatiner">
+        <h2 class="mainText">
+          Тема: Изучение неравномерного движения с целью определения мгновенной
+          скорости Цель:
+        </h2>
+      </div>
+      <div class="mainText-contatiner">
+        <h3 class="mainText">
+          Цель: обеспечить осознанное усвоение физических понятий «средняя
+          скорость» и «мгновенная скорость» при различных видах движения и
+          экспериментально определить среднюю и мгновенную скорость при
+          равноускоренном движении тела.
+        </h3>
+      </div>
+      <div class="container">
+        <div class="average-speed-container">
+          <h4>Считайте средную скорость или мгновенную скорость</h4>
+          <form>
+            <div class="omrs-input-group">
+              <label class="omrs-input-filled">
+                <input
+                  required
+                  placeholder="Путь"
+                  class="sValue"
+                  id="sValue"
+                  type="number"
+                />
+                <span class="omrs-input-helper">Путь</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                >
+                  <path fill="none" d="M0 0h24v24H0V0z" />
+                  <circle cx="15.5" cy="9.5" r="1.5" />
+                  <circle cx="8.5" cy="9.5" r="1.5" />
+                  <path
+                    d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm-5-6c.78 2.34 2.72 4 5 4s4.22-1.66 5-4H7z"
+                  />
+                </svg>
+              </label>
+            </div>
+            <div class="omrs-input-group">
+              <label class="omrs-input-filled">
+                <input
+                  placeholder="Время"
+                  required
+                  class="tValue"
+                  id="tValue"
+                  type="number"
+                />
+                <span class="omrs-input-helper">Время</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                >
+                  <path fill="none" d="M0 0h24v24H0V0z" />
+                  <circle cx="15.5" cy="9.5" r="1.5" />
+                  <circle cx="8.5" cy="9.5" r="1.5" />
+                  <path
+                    d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm-5-6c.78 2.34 2.72 4 5 4s4.22-1.66 5-4H7z"
+                  />
+                </svg>
+              </label>
+            </div>
+            <div class="">
+              <h2 class="vValue" id="vValue"></h2>
+            </div>
+          </form>
+        </div>
+        <div>
+          <details class="custom-select">
+            <summary id="summary" class="radios">
+              <input
+                type="radio"
+                name="item"
+                id="default"
+                title="Округлить до:"
+                id="disabledInput"
+                checked
+              />
+
+              <input type="radio" name="item" id="item1" title="До целого" />
+              <input type="radio" name="item" id="item2" title="До десятых" />
+              <input type="radio" name="item" id="item3" title="До сотых" />
+              <input type="radio" name="item" id="item4" title="До тысячных" />
+            </summary>
+            <ul class="list">
+              <li>
+                <label for="item1"> До целого </label>
+              </li>
+              <li>
+                <label for="item2">До десятых </label>
+              </li>
+              <li>
+                <label for="item3">До сотых</label>
+              </li>
+              <li>
+                <label for="item4">До тысячных</label>
+              </li>
+            </ul>
+          </details>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="container">
+        <div class="wrapper">
+          <h1 class="stop">Stopwatch</h1>
+          <p><span id="seconds">00</span>:<span id="tens">00</span></p>
+          <button id="button-start">Start</button>
+          <button id="button-stop">Stop</button>
+          <button id="button-reset">Reset</button>
+        </div>
+      </div>
+      <div style="text-align: center">
+        <h2 class="canvasTitle">равноускоренное движение</h2>
+        <div>
+          <span style="text-align: center" id="distanceText">0</span>
+          <span>KM</span>
+        </div>
+      </div>
+      <canvas style="width: 100vw" id="theCanvas"></canvas>
+    </main>
+    <script src="./average_speed.js"></script>
+    <script src="./car.js"></script>
+    <script src="./stopWatch.js"></script>
+    <script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
+  </body>
+</html>
