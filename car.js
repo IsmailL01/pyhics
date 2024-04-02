@@ -69,11 +69,7 @@ window.onload = function () {
       }
 
       if (isStop && speed !== 0) {
-        speed = 1;
-        timeId = setTimeout(() => {
-          speed = 0;
-        }, 2000);
-        clearTimeout(timeId);
+        speed = 0;
       }
 
       if (isReset) {
