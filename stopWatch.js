@@ -4,6 +4,22 @@ const buttonStart = document.getElementById("button-start");
 const buttonStop = document.getElementById("button-stop");
 const buttonReset = document.getElementById("button-reset");
 
+let booleansProxy = new Proxy(
+  {
+    isStart: false,
+    isStop: false,
+    isReset: false,
+  },
+  {
+    set: (target, obj, props) => {
+      target[obj] = props;
+    },
+    get: (target, props) => {
+      return target[props];
+    },
+  }
+);
+
 let isStart = false;
 let isReset = false;
 let isStop = false;
@@ -12,25 +28,25 @@ let tens = 00;
 let Interval;
 
 buttonStart.onclick = function () {
-  isStart = true;
-  isStop = false;
-  isReset = false;
+  booleansProxy.isStart = true;
+  booleansProxy.isStop = false;
+  booleansProxy.isReset = false;
   clearInterval(Interval);
   Interval = setInterval(startTimer, 10);
 };
 
 buttonStop.onclick = function () {
-  isStart = false;
-  isStop = true;
-  isReset = false;
+  booleansProxy.isStart = false;
+  booleansProxy.isStop = true;
+  booleansProxy.isReset = false;
 
   clearInterval(Interval);
 };
 
 buttonReset.onclick = function () {
-  isStart = false;
-  isStop = false;
-  isReset = true;
+  booleansProxy.isStart = false;
+  booleansProxy.isStop = false;
+  booleansProxy.isReset = true;
   clearInterval(Interval);
   tens = "00";
   seconds = "00";

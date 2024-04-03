@@ -127,18 +127,42 @@
           <button id="button-reset">Reset</button>
         </div>
       </div>
-      <div style="text-align: center">
-        <h2 class="canvasTitle">равноускоренное движение</h2>
-        <div>
+      <div
+        style="
+          text-align: center;
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+        "
+      >
+        <div style="display: flex; justify-content: center; gap: 20px">
+          <button
+            id="canvasBtn"
+            style="border-radius: 20px"
+            class="canvasTitle"
+          >
+            равноускоренное движение
+          </button>
+          <button
+            id="canvasBtn"
+            style="border-radius: 20px"
+            class="canvasTitle"
+          >
+            мгновенная скорость
+          </button>
+        </div>
+        <div style="text-align: center">
           <span style="text-align: center" id="distanceText">0</span>
           <span>KM</span>
         </div>
       </div>
       <canvas style="width: 100vw" id="theCanvas"></canvas>
     </main>
-    <script src="./average_speed.js"></script>
+
     <script src="./car.js"></script>
+
     <script src="./stopWatch.js"></script>
+    <script src="./average_speed.js"></script>
     <script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
   </body>
 </html>
