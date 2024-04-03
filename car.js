@@ -77,8 +77,12 @@ window.onload = function () {
 
   canvasBtn.forEach((btn) => {
     btn.addEventListener("click", (e) => {
-      speedBust.value = speedType[e.target.innerText];
       const backgroundColor = "#bb7b05";
+      canvasBtn.forEach((btn) => {
+        btn.style.backgroundColor = "";
+      });
+      speedBust.value = speedType[e.target.innerText];
+      e.target.style.backgroundColor = backgroundColor;
     });
   });
 
@@ -119,6 +123,7 @@ window.onload = function () {
 
     let timeOutStart = null;
     let timeOutEnd = null;
+    let num = 1;
 
     createjs.Ticker.addEventListener("tick", function () {
       if (booleansProxy.isStart) {
@@ -131,10 +136,11 @@ window.onload = function () {
 
         timeOutEnd = setTimeout(() => {
           isResizeble.value = false;
+          num = 2;
           clearTimeout(timeOutEnd);
-        }, 2500);
+        }, 3000);
 
-        if (isResizeble.value) {
+        if (isResizeble.value && num == 1) {
           speed.value *= speedBust.value;
         }
 
