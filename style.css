@@ -359,3 +359,27 @@ header {
 .canvasTitle {
   text-align: center;
 }
+
+@media (max-width: 1000px) {
+  .distanceText {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .distanceText {
+    font-size: 25px;
+  }
+}
+
+@media (min-width: 1240px) {
+  .distanceText {
+    font-size: 30px;
+  }
+}
+
+@media (min-width: 1500px) {
+  .distanceText {
+    font-size: 40px;
+  }
+}
